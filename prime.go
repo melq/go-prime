@@ -110,11 +110,11 @@ func PrimeFactorization (n int) (res map[int]int) {
 	/*if n > PrimeList[len(PrimeList) - 1] { // リストに足りない素数を追加
 		CountPrime(n)
 	}*/
+	if n == 1 {
+		return
+	}
 	res = map[int]int{}	//素因数を格納するマップ
 	for _, v := range PrimeList {
-		if n == 1 {	//
-			break
-		}
 		if n % v == 0 {
 			for n % v == 0 {
 				n /= v
